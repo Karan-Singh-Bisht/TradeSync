@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
@@ -8,9 +9,9 @@ function Navbar() {
     >
       <div className="container">
         {/* Logo */}
-        <a className="navbar-brand" href="#">
+        <Link className="navbar-brand" to={"/"}>
           <img src="Images/logo.svg" alt="logo" height="20px" />
-        </a>
+        </Link>
 
         {/* Toggler button for mobile screens */}
         <button
@@ -29,29 +30,29 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto gap-3 text-muted">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={"/signup"}>
                 Signup
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={"/about"}>
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={"/products"}>
                 Products
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={"/pricing"}>
                 Pricing
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <Link className="nav-link" to={"/support"}>
                 Support
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

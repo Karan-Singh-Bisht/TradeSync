@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../Footer";
 
-function signUp() {
+function SignUpPage() {
   return (
     <>
       <Footer />
@@ -9,4 +9,4 @@ function signUp() {
   );
 }
 
-export default signUp;
+export default SignUpPage;
