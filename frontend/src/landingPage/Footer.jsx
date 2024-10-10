@@ -7,7 +7,7 @@ function Footer() {
         <div className="row d-flex align-items-start">
           <div className="col-12 col-md-3 d-flex gap-3 flex-column">
             <a href="#" style={{ paddingTop: "10px", paddingBottom: "10px" }}>
-              <img src="Images/logo.svg" alt="logo" width={"150px"} />
+              <img src="/Images/logo.svg" alt="logo" width={"150px"} />
             </a>
             <p className="text-muted small">
               © 2010 - 2024, Zerodha Broking Ltd. All rights reserved.

@@ -10,7 +10,7 @@ function Navbar() {
       <div className="container">
         {/* Logo */}
         <Link className="navbar-brand" to={"/"}>
-          <img src="Images/logo.svg" alt="logo" height="20px" />
+          <img src="/Images/logo.svg" alt="logo" height="20px" />
         </Link>
 
         {/* Toggler button for mobile screens */}
@@ -45,7 +45,7 @@ function Navbar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to={"/pricing"}>
+              <Link className="nav-link" to={"/pricing/tab-equities"}>
                 Pricing
               </Link>
             </li>
