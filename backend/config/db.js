@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
-const { DB_NAME } = require("../constants");
 
 const db = async () => {
   try {
-    await mongoose.connect(`${process.env.MONGODB_URI}/${DB_NAME}`);
+    await mongoose.connect(`${process.env.MONGODB_URI}/ZerodhaClone`);
     console.log("Connected to MONGODB");
   } catch (e) {
     console.error("Failed to connect to MongoDB", e);
