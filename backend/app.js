@@ -16,6 +16,11 @@ db();
 
 const Holdings = require("./models/holdingModel");
 const Position = require("./models/positionModel");
+const Order = require("./models/orderModel");
+
+const orderRoute = require("./routes/orderRoute");
+
+app.use("/newOrder", orderRoute);
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await Holdings.find({});
@@ -25,6 +30,11 @@ app.get("/allHoldings", async (req, res) => {
 app.get("/allPositions", async (req, res) => {
   let allPosition = await Position.find({});
   res.json(allPosition);
+});
+
+app.get("/allOrders", async (req, res) => {
+  let allOrders = await Order.find({});
+  res.json(allOrders);
 });
 
 app.get("/", (req, res) => {
