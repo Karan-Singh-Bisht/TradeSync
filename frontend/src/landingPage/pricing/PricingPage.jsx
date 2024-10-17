@@ -1,16 +1,12 @@
 import React from "react";
 import Hero from "./Hero";
-import Brokerage from "./Brokerage";
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import PricingTable from "./PricingTable";
 
 function PricingPage() {
   return (
     <>
-      <Navbar />
       <Hero />
-      <Brokerage />
-      <Footer />
+      <PricingTable />
     </>
   );
 }
