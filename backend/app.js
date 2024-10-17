@@ -8,7 +8,14 @@ const cors = require("cors");
 const express = require("express");
 const app = express();
 
-app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Allow requests from your frontend
+    credentials: true, // Allow credentials like cookies to be sent with requests
+  })
+);
 app.use(bodyParser.json());
 
 const db = require("./config/db");
@@ -19,8 +26,10 @@ const Position = require("./models/positionModel");
 const Order = require("./models/orderModel");
 
 const orderRoute = require("./routes/orderRoute");
+const authRoute = require("./routes/authRoute");
 
-app.use("/newOrder", orderRoute);
+app.use("/", orderRoute);
+app.use("/auth", authRoute);
 
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await Holdings.find({});

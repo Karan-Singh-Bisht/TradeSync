@@ -7,23 +7,25 @@ import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
 
-const BuyActionWindow = ({ uid }) => {
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const SellActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
 
-  const handleBuyClick = () => {
-    axios.post("http://localhost:5050/newOrder", {
+  const handleSellClick = async () => {
+    await axios.post("http://localhost:5050/sellOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
-      mode: "BUY",
+      mode: "SELL",
     });
 
-    GeneralContext.closeBuyWindow();
+    GeneralContext.closeSellWindow();
   };
-
   const handleCancelClick = () => {
-    GeneralContext.closeBuyWindow();
+    GeneralContext.closeSellWindow();
   };
 
   return (
@@ -57,10 +59,14 @@ const BuyActionWindow = ({ uid }) => {
       <div className="buttons">
         <span>Margin required ₹140.65</span>
         <div>
-          <Link className="btn btn-blue" onClick={handleBuyClick}>
-            Buy
+          <Link className="btn btn-blue" onClick={handleSellClick}>
+            Sell
           </Link>
-          <Link to="" className="btn btn-grey" onClick={handleCancelClick}>
+          <Link
+            to="/holdings"
+            className="btn btn-grey"
+            onClick={handleCancelClick}
+          >
             Cancel
           </Link>
         </div>
@@ -69,4 +75,4 @@ const BuyActionWindow = ({ uid }) => {
   );
 };
 
-export default BuyActionWindow;
+export default SellActionWindow;

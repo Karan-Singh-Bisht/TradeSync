@@ -30,7 +30,7 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto gap-3 text-muted">
             <li className="nav-item">
-              <Link className="nav-link" to={"/signup"}>
+              <Link className="nav-link" to={"/auth/signUp"}>
                 Signup
               </Link>
             </li>
