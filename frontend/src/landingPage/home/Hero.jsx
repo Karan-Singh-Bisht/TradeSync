@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -18,13 +19,14 @@ function Hero() {
               Online platform to invest in stocks, derivatives, mutual funds,
               ETFs, bonds, and more.
             </p>
-            <button
+            <Link
+              to={"/auth/Signup"}
               type="button"
               className="btn btn-primary my-3"
               style={{ width: "150px" }} // You can set a fixed width or use Bootstrap's sizing classes like "col-md-2" etc.
             >
               Sign up
-            </button>
+            </Link>
           </div>
         </div>
       </div>

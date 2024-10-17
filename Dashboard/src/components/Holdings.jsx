@@ -11,6 +11,19 @@ const Holdings = () => {
     });
   }, []);
 
+  const labels = allHoldings.map((subArray) => subArray["name"]);
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Stock Price",
+        data: allHoldings.map((stock) => stock.price),
+        backgroundColor: "rgba(255, 99, 132, 0.5)",
+      },
+    ],
+  };
+
   return (
     <>
       <h3 className="title">Holdings ({allHoldings.length})</h3>
@@ -57,7 +70,7 @@ const Holdings = () => {
         </table>
       </div>
 
-      {/* <div className="row">
+      <div className="row">
         <div className="col">
           <h5>
             29,875.<span>55</span>{" "}
@@ -75,7 +88,7 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
-      <VerticalGraph data={data} /> */}
+      <VerticalGraph data={data} />
     </>
   );
 };

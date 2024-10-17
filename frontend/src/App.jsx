@@ -15,7 +15,6 @@ import Signup from "./landingPage/Signup.jsx";
 import Pricinglayout from "./layouts/Pricinglayout.jsx";
 import CurrencyPage from "./landingPage/pricing/CurrencyPage.jsx";
 import CommodityPage from "./landingPage/pricing/CommodityPage.jsx";
-import Login from "./landingPage/Login.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -24,7 +23,6 @@ const router = createBrowserRouter(
       <Route path="/about" element={<AboutPage />} />
       <Route path="/products" element={<ProductsPage />} />
       <Route path="/auth/signUp" element={<Signup />} />
-      <Route path="/auth/Login" element={<Login />} />
       <Route path="/pricing" element={<Pricinglayout />}>
         <Route path="tab-equities" element={<PricingPage />} />
         <Route path="tab-currency" element={<CurrencyPage />}></Route>
