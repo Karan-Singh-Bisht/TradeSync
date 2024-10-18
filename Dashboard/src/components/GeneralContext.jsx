@@ -14,7 +14,6 @@ export const GeneralContextProvider = (props) => {
   const [isBuyWindowOpen, setIsBuyWindowOpen] = useState(false);
   const [selectedStockUID, setSelectedStockUID] = useState("");
   const [isSellWindowOpen, setIsSellWindowOpen] = useState(false);
-  // const [selectedSellStockUID, setSelectedSellStockUID] = useState("");
 
   const handleOpenBuyWindow = (uid) => {
     setIsBuyWindowOpen(true);
