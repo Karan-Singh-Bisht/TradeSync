@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 const corsOptions = {
   origin: [
     'http://localhost:5173', // Your local frontend URL
-    'https://tradesync-w166.onrender.com' // Your production frontend URL
+    'https://trade-sync-ten.vercel.app/'
   ],
   credentials: true, // Allow credentials
 };
