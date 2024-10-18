@@ -10,8 +10,13 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 const corsOptions = {
-  origin: "*", // You can also specify specific domains like 'https://example.com'
+  origin: [
+    'http://localhost:5173', // Your local frontend URL
+    'https://tradesync-w166.onrender.com' // Your production frontend URL
+  ],
+  credentials: true, // Allow credentials
 };
 
 app.use(cors(corsOptions));
