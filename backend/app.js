@@ -10,13 +10,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: "https://trade-sync-ten.vercel.app", // Allow requests from your frontend
-    origin: "http://localhost:5174",
-    credentials: true, // Allow credentials like cookies to be sent with requests
-  })
-);
+const corsOptions = {
+  origin: "*", // You can also specify specific domains like 'https://example.com'
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const db = require("./config/db");
@@ -33,13 +31,21 @@ app.use("/", orderRoute);
 app.use("/auth", authRoute);
 
 app.get("/allHoldings", async (req, res) => {
-  let allHoldings = await Holdings.find({});
-  res.json(allHoldings);
+  try {
+    let allHoldings = await Holdings.find({});
+    res.json(allHoldings);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get("/allPositions", async (req, res) => {
-  let allPosition = await Position.find({});
-  res.json(allPosition);
+  try {
+    let allPosition = await Position.find({});
+    res.json(allPosition);
+  } catch (err) {
+    console.log(err);
+  }
 });
 
 app.get("/allOrders", async (req, res) => {

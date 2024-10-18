@@ -10,6 +10,7 @@ const Positions = () => {
     axios
       .get(`https://tradesync-w166.onrender.com/allPositions`)
       .then((res) => {
+        console.log(res.data);
         setAllPositions(res.data);
       });
   }, []);
