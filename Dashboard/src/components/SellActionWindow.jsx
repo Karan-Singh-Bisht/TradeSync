@@ -15,7 +15,7 @@ const SellActionWindow = ({ uid }) => {
   const [stockPrice, setStockPrice] = useState(0.0);
 
   const handleSellClick = async () => {
-    await axios.post("http://localhost:5050/sellOrder", {
+    await axios.post("https://tradesync-w166.onrender.com/sellOrder", {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,

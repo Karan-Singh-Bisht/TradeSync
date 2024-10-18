@@ -7,9 +7,11 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5050/allPositions`).then((res) => {
-      setAllPositions(res.data);
-    });
+    axios
+      .get(`https://tradesync-w166.onrender.com/allPositions`)
+      .then((res) => {
+        setAllPositions(res.data);
+      });
   }, []);
 
   return (
