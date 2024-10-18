@@ -10,7 +10,11 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors("*"));
+const corsOptions = {
+  origin: "*", // You can also specify specific domains like 'https://example.com'
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const db = require("./config/db");
