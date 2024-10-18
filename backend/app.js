@@ -10,11 +10,13 @@ const app = express();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const corsOptions = {
-  origin: "*", // You can also specify specific domains like 'https://example.com'
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://trade-sync-ten.vercel.app", // Allow requests from your frontend
+    origin: "https://trade-sync-y83v.vercel.app",
+    credentials: true, // Allow credentials like cookies to be sent with requests
+  })
+);
 app.use(bodyParser.json());
 
 const db = require("./config/db");
