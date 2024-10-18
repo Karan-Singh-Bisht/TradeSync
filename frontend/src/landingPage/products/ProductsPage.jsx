@@ -15,7 +15,7 @@ function ProductsPage() {
         imageURL="Images/kite.png"
         productName="Kite"
         productDescription="Our ultra-fast flagship trading platform with streaming market data, advanced charts, an elegant UI, and more. Enjoy the Kite experience seamlessly on your Android and iOS devices."
-        tryDemo="#"
+        tryDemo="https://trade-sync-y83v.vercel.app/"
         learnMore="#"
         googlePlay="https://play.google.com/store/search?q=zerodha&c=apps"
         appStore="https://apps.apple.com/us/app/zerodha-kite-trade-invest/id1449453802"
