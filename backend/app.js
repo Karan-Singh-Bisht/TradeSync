@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "http://localhost:5173", // Allow requests from your frontend
+    origin: "https://trade-sync-ten.vercel.app", // Allow requests from your frontend
     origin: "http://localhost:5174",
     credentials: true, // Allow credentials like cookies to be sent with requests
   })
